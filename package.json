@@ -1,0 +1,38 @@
+{
+  "name": "vue-es6",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && grunt development && webpack",
+    "start": "npm run build && node server.js",
+    "clean": "rimraf build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-vue": "^2.0.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "open": "0.0.5",
+    "rimraf": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "4.16.2",
+    "vue": "^2.5.13"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "vue"
+    ]
+  }
+}
