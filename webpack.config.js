@@ -9,6 +9,7 @@ module.exports = {
         }
     },
     entry: [
+        'webpack-hot-middleware/client',
         path.resolve(__dirname, 'src/index.js')
     ],
     output: {
@@ -28,5 +29,12 @@ module.exports = {
             test: /\.html$/,
             loader: 'raw-loader'
         }]
-    }
+    },
+    plugins: [
+        // OccurenceOrderPlugin is needed for webpack 1.x only
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        // Use NoErrorsPlugin for webpack 1.x
+        new webpack.NoEmitOnErrorsPlugin()
+    ]
 };
